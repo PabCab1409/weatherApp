@@ -1,4 +1,5 @@
 import "./App.css";
+import DayStatus from "./Components/DayStatus";
 
 function App() {
   return (
@@ -14,16 +15,8 @@ function App() {
       <div className="containerSearcher">
         <input placeholder="Pablo"></input>
       </div>
-      <h1>TOLEDO</h1>
-      <div className="containerStatsCity">
-        <div className="generalInfo">
-          <h1 className="degreesTitle">18 °C</h1>
-          <img className="weatherImg" src="https://www.metaweather.com/static/img/weather/s.svg"></img>
-        </div>
-        <div className="dayInfo">
-          asda
-        </div>
-      </div>
+      <h1 className="cityTitle">TOLEDO</h1>
+      <DayStatus></DayStatus>
     </div>
   );
 }
