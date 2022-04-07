@@ -1,23 +1,16 @@
-import "./App.css";
-import DayStatus from "./Components/DayStatus";
+import React from "react";
+import Box from "./Components/Box";
+import DayBasicStatus from "./Components/DayBasicStatus";
+import SearchBar from "./Components/SearchBar";
+import Header from "./Layouts/Header.jsx";
 
 function App() {
   return (
-    <div className="containerMenu">
-      <ul>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Map</a>
-        </li>
-      </ul>
-      <div className="containerSearcher">
-        <input placeholder="Pablo"></input>
-      </div>
-      <h1 className="cityTitle">TOLEDO</h1>
-      <DayStatus></DayStatus>
-    </div>
+    <React.Fragment>
+      <Header></Header>
+      <SearchBar></SearchBar>
+      <DayBasicStatus></DayBasicStatus>
+    </React.Fragment>
   );
 }
 
