@@ -1,4 +1,9 @@
-  
+.container{
+  padding: 20px;
+  background: rgb(209, 209, 209);
+  border-radius: 20px;
+  height: 30em;
+}
   .generalInfo{
     width: 50%;
     height: 100%;

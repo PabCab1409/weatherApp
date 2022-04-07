@@ -1,11 +1,11 @@
 import React from "react";
-import Box from "./Box.jsx";
 import "./DayBasicStatus.css";
+import Box  from "./Box";
 
 const DayBasicStatus = () => {
   return (
     <Box>
-      <div className="generalInfo">
+       <div className="generalInfo">
         <h1 className="degreesTitle">18 °C</h1>
         <img
           className="weatherImg"
