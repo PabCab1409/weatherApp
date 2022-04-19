@@ -1,33 +1,21 @@
   .generalInfo{
     width: 50%;
     height: 100%;
-    background: blue;
     float: left;
     display: inline-flex;
   }
 
-  .cityDegrees{
-    background-color: #fff;
+  .cityInfo{
+    padding: 20px;
   }
 
-  .iconState   {
-    background-color: yellow;
-    float: right;
+  .cityDegree{
+    font-size: 60px;
   }
-  
-  .dayInfo{
-    height: 100%;
-    width: 50%;
-    background: red;
+
+  .minMax > p{
     float: left;
+    margin:10px;
   }
+
   
-  .degreesTitle{
-    font-size: 80px;
-    margin-left: 10%;
-  }
-  
-  .weatherImg{
-    width: 30%;
-    height: 30%;
-  }
