@@ -5,35 +5,23 @@
     background-color: red;
 }
 
-.complexInfoContainer > div > div > div > div{
-    display: flex;
-}
-.complexInfoContainer > div > div > div >  p{
-    margin-left: 10px ;
-}
-.complexInfoContainer > div {
+.complexInfoContainer>.firstInfoContainer {
     display: flex;
 }
 
-.complexInfoContainer > div > p{
-    margin-left: 10px ;
-}
-
-
-.firstInfoContainer {
-    background-color: blue;
-}
 
 .first3elements {
-    width: 30%;
+    width: 100%;
     float: left;
     background-color: yellow;
 }
 
 .second3elements {
     background-color: green;
+    width: 100%;
 }
 
-.firstInfoContainer > div > div{
-    display: flex;
+.date{
+    display:flex;
+    justify-content: center;
 }

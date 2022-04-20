@@ -11,59 +11,57 @@ import {
   SunRise,
   SunSet,
 } from "../Icons/Icons";
+import IconPropertyValue from "./IconPropertyValue";
 
 const ComplexDayInfo = () => {
   return (
     <div className="complexInfoContainer">
       <div className="firstInfoContainer">
         <div className="first3elements">
-          <div className="water">
-            <Water></Water>
-            <p>Humidity 68%</p>
-          </div>
-
-          <div>
-            <Visibility></Visibility>
-            <p>Visibility 11.5km</p>
-          </div>
-
-          <div>
-            <Gauge></Gauge>
-            <p>Pressure 1009mb</p>
-          </div>
+          <IconPropertyValue
+            icon={<Water />}
+            type="Humedad"
+          ></IconPropertyValue>
+          <IconPropertyValue
+            icon={<Visibility />}
+            type="Visibilidad"
+          ></IconPropertyValue>
+          <IconPropertyValue
+            icon={<Gauge />}
+            type="Presion"
+          ></IconPropertyValue>
         </div>
 
         <div className="second3elements">
-          <div>
-            <Confidence></Confidence>
-            <p>Confidence 75%</p>
-          </div>
-
-          <div>
-            <WindSpeed></WindSpeed>
-            <p>Velocidad del viento</p>
-          </div>
-
-          <div>
-            <WindDirection></WindDirection>
-            <p>Direccion del viento</p>
-          </div>
+          <IconPropertyValue
+            icon={<Confidence />}
+            type="Exactitud"
+          ></IconPropertyValue>
+          <IconPropertyValue
+            icon={<WindSpeed />}
+            type="Velocidad del viento"
+          ></IconPropertyValue>
+          <IconPropertyValue
+            icon={<WindDirection />}
+            type="Direccion del viento"
+          ></IconPropertyValue>
         </div>
       </div>
 
       <div>
-        <Date></Date>
-        <p>Hora</p>
-      </div>
-
-      <div>
-        <SunSet></SunSet>
-        <p>Puesta de sol</p>
-      </div>
-
-      <div>
-        <SunRise></SunRise>
-        <p>Salida de sol</p>
+        <div className="date">
+          <IconPropertyValue icon={<Date />} type="Hora"></IconPropertyValue>
+        </div>
+        <div>
+          <IconPropertyValue
+            icon={<SunSet />}
+            type="Puesta de sol"
+          ></IconPropertyValue>
+          <IconPropertyValue
+            icon={<SunRise />}
+            type="Salida de sol"
+          ></IconPropertyValue>
+        </div>
       </div>
     </div>
   );
