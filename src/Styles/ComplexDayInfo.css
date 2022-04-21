@@ -2,6 +2,7 @@
     height: 100%;
     width: 58%;
     float: left;
+    background-color: red;
 }
 
 .complexInfoContainer>.firstInfoContainer {
@@ -9,16 +10,11 @@
 }
 
 
-.first3elements {
+.first4elements {
     width: 100%;
     float: left;
 }
 
-.second3elements {
+.second4elements {
     width: 100%;
-}
-
-.n>div {
-    display: flex;
-    justify-content: center;
 }

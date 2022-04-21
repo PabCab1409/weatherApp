@@ -17,7 +17,7 @@ const ComplexDayInfo = () => {
   return (
     <div className="complexInfoContainer">
       <div className="firstInfoContainer">
-        <div className="first3elements">
+        <div className="first4elements">
           <IconPropertyValue
             icon={<Water />}
             type="Humedad"
@@ -33,9 +33,14 @@ const ComplexDayInfo = () => {
             type="Presion"
             value="1004 mb"
           ></IconPropertyValue>
+          <IconPropertyValue
+            icon={<SunSet />}
+            type="Puesta de sol"
+            value="07:12:55"
+          ></IconPropertyValue>
         </div>
 
-        <div className="second3elements">
+        <div className="second4elements">
           <IconPropertyValue
             icon={<Confidence />}
             type="Exactitud"
@@ -51,21 +56,14 @@ const ComplexDayInfo = () => {
             type="Direccion del viento"
             value="SSW"
           ></IconPropertyValue>
-        </div>
-      </div>
-
-      <div className="n">
-          <IconPropertyValue
-            icon={<SunSet />}
-            type="Puesta de sol"
-            value="07:12:55"
-          ></IconPropertyValue>
           <IconPropertyValue
             icon={<SunRise />}
             type="Salida de sol"
             value="07:12:55"
           ></IconPropertyValue>
+        </div>
       </div>
+
     </div>
   );
 };

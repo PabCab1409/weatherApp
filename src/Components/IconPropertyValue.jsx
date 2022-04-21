@@ -5,7 +5,7 @@ const IconPropertyValue = (props) => {
   return (
     <div style={{ display: "flex", padding: "9px" }}>
       {props.icon}
-      <p style={{ marginLeft: "10px" }}>{props.type} <span style={{color:"#00e", fontWeight:"bold"}}>{props.value}</span></p>
+      <p style={{ marginLeft: "10px" }}>{props.type} <span style={{fontWeight:"bold"}}>{props.value}</span></p>
     </div>
   );
 };

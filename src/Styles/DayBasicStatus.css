@@ -1,0 +1,16 @@
+.minMax{
+    padding: 10px;
+}
+.minMax > div{
+    float: left;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+.max{
+    float: left;
+    color: #fa1b1b
+}
+.min{
+    color: #2cf022;
+}

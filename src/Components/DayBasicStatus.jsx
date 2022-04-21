@@ -2,7 +2,7 @@ import React from "react";
 import "./DayBasicStatus.css";
 import Box from "./Box";
 import ComplexDayInfo from "./ComplexDayInfo"
-
+import "../Styles/DayBasicStatus.css"
 const DayBasicStatus = () => {
   return (
     <Box>
@@ -14,12 +14,16 @@ const DayBasicStatus = () => {
           ></img>
         </div>
         <div className="cityInfo">
-          <h1 className="cityDegree">18 C</h1>
+          <h1 className="cityDegree">18º C</h1>
           <h2>Toledo</h2>
-          <p>Nublado</p>
+          <p style={{marginTop:10}}>Nublado</p>
           <div className="minMax">
-            <p>18º C</p>
-            <p>21º C</p>
+            <div>
+            <p className="min">24º</p><b>C</b>
+            </div>
+            <div>
+            <p className="max">5º</p><b>C</b>
+            </div>
           </div>
         </div>
       </div>
