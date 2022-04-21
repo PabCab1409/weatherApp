@@ -1,8 +1,7 @@
 .complexInfoContainer {
     height: 100%;
-    width: 50%;
+    width: 58%;
     float: left;
-    background-color: red;
 }
 
 .complexInfoContainer>.firstInfoContainer {
@@ -13,15 +12,13 @@
 .first3elements {
     width: 100%;
     float: left;
-    background-color: yellow;
 }
 
 .second3elements {
-    background-color: green;
     width: 100%;
 }
 
-.date{
-    display:flex;
+.n>div {
+    display: flex;
     justify-content: center;
 }
