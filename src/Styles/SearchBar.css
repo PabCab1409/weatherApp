@@ -1,9 +1,14 @@
+
 form{
-  margin: 20px;
-  padding: 7px;
   display: flex;
   border: 2px solid white;
   border-radius: 20px;
+  padding: 10px;
+  margin:0px 20px 10px 20px;
+  background: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 20px;
+  overflow:auto;
 }
 
 button{
@@ -18,7 +23,7 @@ input{
   border: none;
   outline: none;
   background: none;
-  
+  color: black;  
 }
 
 input:focus {
