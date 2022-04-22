@@ -63,7 +63,6 @@ const ComplexDayInfo = () => {
           ></IconPropertyValue>
         </div>
       </div>
-
     </div>
   );
 };

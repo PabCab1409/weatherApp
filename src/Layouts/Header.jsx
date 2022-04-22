@@ -1,7 +1,7 @@
 import React from "react";
 import "../Styles/Header.css";
 
-const SearchBar = () => {
+const Header = () => {
   return (
     <div className="containerMenu">
       <ul>
@@ -16,4 +16,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default Header;

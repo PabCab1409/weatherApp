@@ -1,0 +1,34 @@
+.generalInfo {
+    width: 42%;
+    height: 100%;
+    float: left;
+    display: inline-flex;
+}
+
+.cityInfo {
+    padding: 20px;
+}
+
+.cityDegree {
+    font-size: 60px;
+}
+
+.minMax {
+    padding: 10px;
+}
+
+.minMax>div {
+    float: left;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.max {
+    float: left;
+    color: #fa1b1b
+}
+
+.min {
+    color: #2cf022;
+}

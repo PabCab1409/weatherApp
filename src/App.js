@@ -1,5 +1,4 @@
 import React from "react";
-import Box from "./Components/Box";
 import DayBasicStatus from "./Components/DayBasicStatus";
 import SearchBar from "./Components/SearchBar";
 import Header from "./Layouts/Header.jsx";
