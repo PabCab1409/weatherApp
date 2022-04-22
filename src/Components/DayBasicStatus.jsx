@@ -2,8 +2,8 @@ import React from "react";
 import Box from "./Box";
 import SimpleDayInfo from "./SimpleDayInfo";
 import ComplexDayInfo from "./ComplexDayInfo";
-
-const DayBasicStatus = () => {
+const DayBasicStatus = (props) => {
+console.log(props.props)
   return (
     <Box
       props={
