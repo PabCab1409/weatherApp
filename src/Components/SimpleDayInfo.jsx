@@ -1,7 +1,7 @@
 import React from "react";
 import "../Styles/SimpleDayInfo.css";
 
-const SimpleDayInfo = () => {
+const SimpleDayInfo = (props) => {
   return (
     <div className="generalInfo">
       <div className="iconState">
@@ -12,6 +12,7 @@ const SimpleDayInfo = () => {
       </div>
       <div className="cityInfo">
         <h1 className="cityDegree">18º C</h1>
+        <p>{props.message}</p>
         <h2>Toledo</h2>
         <p style={{ marginTop: 10 }}>Nublado</p>
         <div className="minMax">
