@@ -1,0 +1,41 @@
+.contactIco {
+    width: 50%;
+    align-items: center;
+    margin: auto;
+}
+
+.contactContainer {
+    width: 100%;
+    display: flex;
+    float: left;
+}
+
+.contactLogoContainer {
+    width: 100%;
+    text-align: center;
+    margin-right: 90px;
+
+}
+
+.contactFormContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.textAreaContact{
+    outline: none;
+    width: 80%;
+    height: 30%;
+    resize: none;
+    border: 0;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: rgb(255, 255, 255);
+    padding: 10px 10px 10px 20px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.buttonContact{
+    margin: 10px;
+}

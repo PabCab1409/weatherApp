@@ -31,7 +31,7 @@ const DaysForecast = () => {
 <ForecastBox
         props={
           <div className="forecastContainerInfo">
-            <p>Lunes</p>
+            <p>Martes</p>
             <img
               src="https://www.metaweather.com/static/img/weather/hc.svg"
               style={{ width: 50 }}
