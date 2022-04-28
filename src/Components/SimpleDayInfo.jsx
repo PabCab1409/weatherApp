@@ -1,22 +1,49 @@
-import React, { useEffect,useState } from "react";
+import React, { Suspense, useEffect,useState } from "react";
 import "../Styles/SimpleDayInfo.css";
+import "../Styles/Spinner.css";
+
 
 const SimpleDayInfo = (props) => {
 
-  const [state,useState] = useState(false)
+  const [json,setJson] = useState([]);
 
-  if(props.json != null | props.json != undefined){
-    useState(true)
+  useEffect(() => {
+
+    var simplePath =
+    "https://www.metaweather.com/api/location/search/?query=london";
+
+    fetch(simplePath)
+    .then((response) => response.json())
+    .then((json) => {
+      var woeid = json["0"]["woeid"];
+      var complexPath = `https://www.metaweather.com/api/location/${woeid}/`;
+      
+      fetch(complexPath)
+        .then((response) => response.json())
+        .then((json) => setJson(json))
+        .catch((error) => {
+          <p>{error}</p>
+        });
+    })
+    .catch((error) => {
+      <p>{error}</p>
+    });
+
+  },[]);
+
+  if(json == ""){
+    return (
+      <div style={{ height: 200, justifyContent: "center", display: "flex" }}>
+        <div className="spinner">si</div>
+      </div>
+    );
   }
 
-  if(!state){
-    return(<div>wait</div>)
-  }
+  var degree = Math.round(json['consolidated_weather'][0]['the_temp'])
 
-  var json = props.json
 
   return (
-    <div className="generalInfo">
+      <div className="generalInfo">
       <div className="iconState">
         <img
           style={{ width: 200 }}
@@ -24,7 +51,7 @@ const SimpleDayInfo = (props) => {
         ></img>
       </div>
       <div className="cityInfo">
-        <h1 className="cityDegree">{Math.round(json['consolidated_weather'][0]['the_temp']) }º C</h1>
+        <h1 className="cityDegree">{degree}º C</h1>
         <h2>Toledo</h2>
         <p style={{ marginTop: 10 }}>Nublado</p>
         <div className="minMax">

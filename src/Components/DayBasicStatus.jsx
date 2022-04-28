@@ -6,32 +6,6 @@ import "../Styles/Spinner.css";
 
 const DayBasicStatus = () => {
 
-  const [json,setJson] = useState([]);
-
-  useEffect(() => {
-
-    var simplePath =
-    "https://www.metaweather.com/api/location/search/?query=london";
-
-    fetch(simplePath)
-    .then((response) => response.json())
-    .then((json) => {
-      var woeid = json["0"]["woeid"];
-      var complexPath = `https://www.metaweather.com/api/location/${woeid}/`;
-      
-      fetch(complexPath)
-        .then((response) => response.json())
-        .then((json) => setJson(json))
-        .catch((error) => {
-          <p>{error}</p>
-        });
-    })
-    .catch((error) => {
-      <p>{error}</p>
-    });
-
-  },[]);
-
   /*
   if (isLoading) {
     return (
@@ -45,7 +19,7 @@ const DayBasicStatus = () => {
     <Box
       props={
         <React.Fragment>
-          <SimpleDayInfo json={json}></SimpleDayInfo>
+          <SimpleDayInfo></SimpleDayInfo>
           <ComplexDayInfo></ComplexDayInfo>
         </React.Fragment>
       }
