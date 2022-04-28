@@ -1,3 +1,6 @@
+Al escribir en la barra de busqueda me haga el fetch
+los forecast deben ser pulsables -> https://www.metaweather.com/api/location/766273/2022/4/27/ con eso puedo hacer consultas a la api en una fecha concreta
 el fetchdata que hago en app.jsx podria llevarmelo a util tambien, y exportar la variable json, para que en vez de pasarsela a los componentes por props, la importe directamente en el componente donde tenga que usarla
 Un rename a todas las clases no vendria mal crack
 la informacion "compleja" (humedad y todo eso), viene en una medida inglesa, creo que habia una opcion en la pagina de obtener los datos en medida europea, mirar si puedo obtenerlos asi desde la api, y si no parsearlos.
+Añadir algun tipo de firma al build by (icono o algo asi)
