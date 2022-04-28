@@ -7,13 +7,25 @@ import {
   Confidence,
   WindSpeed,
   WindDirection,
-  Date,
   SunRise,
   SunSet,
 } from "../Icons/Icons";
 import IconPropertyValue from "./IconPropertyValue";
 
-const ComplexDayInfo = () => {
+const ComplexDayInfo = (props) => {
+
+var json = props.json
+var humidity = json['consolidated_weather'][0]['humidity']
+var visibility = Math.round(json['consolidated_weather'][0]['visibility'])
+var pressure = Math.round(json['consolidated_weather'][0]['air_pressure'])
+var dateSunset = new Date(json['sun_set'])
+var sunSet = dateSunset.getUTCHours()+":"+dateSunset.getUTCMinutes()
+var probability = json['consolidated_weather'][0]['predictability']
+var winSpeed = Math.round(json['consolidated_weather'][0]['wind_speed'])
+var winDirection = json['consolidated_weather'][0]['wind_direction_compass']
+var dateSunRise = new Date(json['sun_rise'])
+var sunRise = dateSunRise.getUTCHours()+":"+dateSunRise.getUTCMinutes()
+
   return (
     <div className="complexInfoContainer">
       <div className="firstInfoContainer">
@@ -21,22 +33,22 @@ const ComplexDayInfo = () => {
           <IconPropertyValue
             icon={<Water />}
             type="Humedad"
-            value="68%"
+            value={`${humidity}%`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<Visibility />}
             type="Visibilidad"
-            value="11 miles"
+            value={`${visibility} miles`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<Gauge />}
             type="Presion"
-            value="1004 mb"
+            value={`${pressure} mb`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<SunSet />}
             type="Puesta de sol"
-            value="07:12:55"
+            value={sunSet}
           ></IconPropertyValue>
         </div>
 
@@ -44,22 +56,22 @@ const ComplexDayInfo = () => {
           <IconPropertyValue
             icon={<Confidence />}
             type="Exactitud"
-            value="99%"
+            value={`${probability}%`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<WindSpeed />}
             type="Velocidad del viento"
-            value="19 mph"
+            value={`${winSpeed} mph`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<WindDirection />}
             type="Direccion del viento"
-            value="SSW"
+            value={`${winDirection}`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<SunRise />}
             type="Salida de sol"
-            value="07:12:55"
+            value={sunRise}
           ></IconPropertyValue>
         </div>
       </div>

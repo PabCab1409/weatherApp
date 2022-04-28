@@ -5,41 +5,23 @@ import "../Styles/Spinner.css";
 
 const SimpleDayInfo = (props) => {
 
-  const [json,setJson] = useState([]);
-
-  useEffect(() => {
-
-    var simplePath =
-    "https://www.metaweather.com/api/location/search/?query=london";
-
-    fetch(simplePath)
-    .then((response) => response.json())
-    .then((json) => {
-      var woeid = json["0"]["woeid"];
-      var complexPath = `https://www.metaweather.com/api/location/${woeid}/`;
-      
-      fetch(complexPath)
-        .then((response) => response.json())
-        .then((json) => setJson(json))
-        .catch((error) => {
-          <p>{error}</p>
-        });
-    })
-    .catch((error) => {
-      <p>{error}</p>
-    });
-
-  },[]);
+  var json = props.json
 
   if(json == ""){
     return (
       <div style={{ height: 200, justifyContent: "center", display: "flex" }}>
-        <div className="spinner">si</div>
+        <div className="spinner"></div>
       </div>
     );
   }
 
+  var stateForImg = json['consolidated_weather'][0]['weather_state_abbr']
+  var img = `https://www.metaweather.com/static/img/weather/${stateForImg}.svg`
   var degree = Math.round(json['consolidated_weather'][0]['the_temp'])
+  var city = json['title']
+  var state = json['consolidated_weather'][0]['weather_state_name']
+  var min = Math.round(json['consolidated_weather'][0]['min_temp'])
+  var max = Math.round(json['consolidated_weather'][0]['max_temp'])
 
 
   return (
@@ -47,20 +29,20 @@ const SimpleDayInfo = (props) => {
       <div className="iconState">
         <img
           style={{ width: 200 }}
-          src="https://www.metaweather.com/static/img/weather/s.svg"
+          src={img}
         ></img>
       </div>
       <div className="cityInfo">
         <h1 className="cityDegree">{degree}º C</h1>
-        <h2>Toledo</h2>
-        <p style={{ marginTop: 10 }}>Nublado</p>
+        <h2>{city}</h2>
+        <p style={{ marginTop: 10 }}>{state}</p>
         <div className="minMax">
           <div>
-            <p className="min">24º</p>
+            <p className="max">{max}º</p>
             <b>C</b>
           </div>
           <div>
-            <p className="max">5º</p>
+            <p className="min">{min}º</p>
             <b>C</b>
           </div>
         </div>
