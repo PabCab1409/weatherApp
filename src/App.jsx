@@ -50,7 +50,7 @@ function App() {
       <Header></Header>
       <SearchBar></SearchBar>
       <DayBasicStatus json={json}></DayBasicStatus>
-      <DaysForecast></DaysForecast>
+      <DaysForecast json={json}></DaysForecast>
       <Contact></Contact>
       <Footer></Footer>
     </React.Fragment>
