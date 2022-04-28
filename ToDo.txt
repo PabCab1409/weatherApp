@@ -1,0 +1,4 @@
+el fetchdata que hago en app.jsx podria llevarmelo a util tambien, y exportar la variable json, para que en vez de pasarsela a los componentes por props, la importe directamente en el componente donde tenga que usarla
+la funcion printDay() en DayForecast puede estar en la carpeta util ya que la voy a tener que utilizar para poner el dia en DayBasicStatus
+Un rename a todas las clases no vendria mal crack
+la informacion "compleja" (humedad y todo eso), viene en una medida inglesa, creo que habia una opcion en la pagina de obtener los datos en medida europea, mirar si puedo obtenerlos asi desde la api, y si no parsearlos.
