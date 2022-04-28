@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     var simplePath =
-      "https://www.metaweather.com/api/location/search/?query=barcelona";
+      "https://www.metaweather.com/api/location/search/?query=madrid";
 
     fetch(simplePath)
       .then((response) => response.json())

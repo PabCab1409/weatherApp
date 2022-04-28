@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/DaysForecast.css";
+import {fromNumberToDay} from "../Utils/Utils"
 
 const ForecastBox = (props) => {
   return <div className="forecastBox">{props.props}</div>;
@@ -13,25 +14,7 @@ const DaysForecast = (props) => {
     <div className="forecastContainer">
       {arrayJson.map((dayInfo) => {
         var dayJson = new Date(dayInfo["1"]["applicable_date"]).getDay();
-        function printDay() {
-          switch (dayJson) {
-            case 0:
-              return "Monday";
-            case 1:
-              return "Tuesday";
-            case 2:
-              return "Wednesday";
-            case 3:
-              return "Thursday";
-            case 4:
-              return "Friday";
-            case 5:
-              return "Saturday";
-            case 6:
-              return "Sunday";
-          }
-        }
-        var day = printDay();
+        var day = fromNumberToDay(dayJson);
         var stateImg = dayInfo["1"]["weather_state_abbr"];
         var img = `https://www.metaweather.com/static/img/weather/${stateImg}.svg`;
         var degrees = Math.round(dayInfo["1"]["the_temp"]);
