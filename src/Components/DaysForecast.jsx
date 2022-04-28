@@ -13,16 +13,15 @@ const DaysForecast = (props) => {
   return (
     <div className="forecastContainer">
       {arrayJson.map((dayInfo) => {
-        var dayJson = new Date(dayInfo["1"]["applicable_date"]).getDay();
-        var day = fromNumberToDay(dayJson);
+       
+        var dayJson = new Date(dayInfo["1"]["applicable_date"])
+        dayJson.setDate( dayJson.getDate() + 1)
+        var day = fromNumberToDay(dayJson.getDay());       
         var stateImg = dayInfo["1"]["weather_state_abbr"];
         var img = `https://www.metaweather.com/static/img/weather/${stateImg}.svg`;
         var degrees = Math.round(dayInfo["1"]["the_temp"]);
         var max = Math.round(dayInfo["1"]["max_temp"]);
         var min = Math.round(dayInfo["1"]["min_temp"]);
-        {
-          console.log(dayInfo);
-        }
 
         return (
           <ForecastBox
