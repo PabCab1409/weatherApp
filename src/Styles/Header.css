@@ -17,12 +17,12 @@ ul {
     position: relative;
   }
   
-  a{
+  .headerLinks{
     color: white ;
     text-decoration: none;
     font-size: 25px;
   }
-  a:after{
+  .headerLinks:after{
     content: "";
     position: absolute;
     left:0;
@@ -32,6 +32,6 @@ ul {
     background:white;
     transition: width .2s ease-in-out;
   }
-  a:hover:after{
+  .headerLinks:hover:after{
     width: 100%;
   }

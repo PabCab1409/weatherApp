@@ -6,10 +6,10 @@ const Header = () => {
     <div className="containerMenu">
       <ul>
         <li>
-          <a href="#searchBar">Search</a>
+          <a className="headerLinks" href="#searchBar">Search</a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a className="headerLinks" href="#contact">Contact</a>
         </li>
       </ul>
     </div>

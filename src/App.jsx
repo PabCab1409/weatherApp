@@ -6,6 +6,8 @@ import DaysForecast from "./Components/DaysForecast";
 import Footer from "./Layouts/Footer";
 import Contact from "./Layouts/Contact";
 
+var locationToSearch
+
 function App() {
   const [json, setJson] = useState([]);
 

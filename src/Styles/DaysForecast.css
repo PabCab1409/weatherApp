@@ -1,4 +1,4 @@
-.forecastBox{
+.forecastBox {
     padding: 20px;
     width: 100%;
     background: #FFFFFF;
@@ -13,25 +13,38 @@
 
 .forecastContainer {
     display: flex;
-    align-items: center;
     padding: 20px;
-    margin: 0px 20px 0px 20px;
 }
 
+.clickableDiv {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 
-.forecastContainerInfo{
+}
+
+.clickableDiv:hover {
+
+    transform: scale(1.05);
+}
+
+.forecastContainerInfo {
     text-align: center;
     overflow: hidden;
+
 }
 
-.forecastMinMax{
+.forecastMinMax {
     text-align: center;
     width: auto;
     display: inline-flex;
 }
-.forecastMinMax > p{
+
+.forecastMinMax>p {
     margin: 10px 10px 0px 5px;
 }
+
 .max {
     color: #2cf022;
 
