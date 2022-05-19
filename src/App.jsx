@@ -1,19 +1,20 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import DayBasicStatus from "./Components/DayBasicStatus";
 import SearchBar from "./Components/SearchBar";
 import Header from "./Layouts/Header.jsx";
 import DaysForecast from "./Components/DaysForecast";
 import Footer from "./Layouts/Footer";
 import Contact from "./Layouts/Contact";
+import { CityContextProvider } from "./Context/CityContext";
 
-var locationToSearch
+var locationToSearch;
 
 function App() {
   const [json, setJson] = useState([]);
 
   useEffect(() => {
     var simplePath =
-      "https://www.metaweather.com/api/location/search/?query=madrid";
+      "https://www.metaweather.com/api/location/search/?query=barcelona";
 
     fetch(simplePath)
       .then((response) => response.json())
@@ -50,9 +51,11 @@ function App() {
   return (
     <React.Fragment>
       <Header></Header>
-      <SearchBar></SearchBar>
-      <DayBasicStatus json={json}></DayBasicStatus>
-      <DaysForecast json={json}></DaysForecast>
+      <CityContextProvider>
+        <SearchBar></SearchBar>
+        <DayBasicStatus json={json}></DayBasicStatus>
+        <DaysForecast json={json}></DaysForecast>
+      </CityContextProvider>
       <Contact></Contact>
       <Footer></Footer>
     </React.Fragment>

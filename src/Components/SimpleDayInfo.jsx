@@ -14,15 +14,6 @@ const SimpleDayInfo = (props) => {
     );
   }
 
-  var stateForImg = json["consolidated_weather"][0]["weather_state_abbr"];
-  var img = `https://www.metaweather.com/static/img/weather/${stateForImg}.svg`;
-  var degree = Math.round(json["consolidated_weather"][0]["the_temp"]);
-  var city = json["title"];
-  var state = json["consolidated_weather"][0]["weather_state_name"];
-  var dayJson = new Date(json['consolidated_weather'][0]['applicable_date']).getDay();
-  var day = fromNumberToDay(dayJson);
-  var min = Math.round(json["consolidated_weather"][0]["min_temp"]);
-  var max = Math.round(json["consolidated_weather"][0]["max_temp"]);
 
   return (
     <div className="generalInfo">
