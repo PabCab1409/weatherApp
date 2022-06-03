@@ -13,18 +13,32 @@ import {
 import IconPropertyValue from "./IconPropertyValue";
 
 const ComplexDayInfo = (props) => {
+  
+  var json = props.json
 
-var json = props.json
-var humidity = json['consolidated_weather'][0]['humidity']
-var visibility = Math.round(json['consolidated_weather'][0]['visibility'])
-var pressure = Math.round(json['consolidated_weather'][0]['air_pressure'])
-var dateSunset = new Date(json['sun_set'])
-var sunSet = dateSunset.getUTCHours()+":"+dateSunset.getUTCMinutes()
-var probability = json['consolidated_weather'][0]['predictability']
-var winSpeed = Math.round(json['consolidated_weather'][0]['wind_speed'])
-var winDirection = json['consolidated_weather'][0]['wind_direction_compass']
-var dateSunRise = new Date(json['sun_rise'])
-var sunRise = dateSunRise.getUTCHours()+":"+dateSunRise.getUTCMinutes()
+var humidity = json['main']['humidity']
+var visibility = json['visibility'] / 1000
+var pressure = json['main']['pressure']
+
+var sunSetSecs = json['sys']['sunset']
+var date = new Date(sunSetSecs * 1000);
+var sunSetTime = date.toLocaleTimeString();
+
+var clouds = json['clouds']['all']
+var winSpeed = Math.round(json['wind']['speed']) * 3.6
+var winDirection = degToCompass(json['wind']['deg'])
+
+var sunRiseSecs = json['sys']['sunrise']
+var date = new Date(sunRiseSecs * 1000);
+var sunRiseTime = date.toLocaleTimeString();
+
+
+function degToCompass(num) {
+  var val = Math.floor((num / 22.5) + 0.5);
+  var arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+  return arr[(val % 16)];
+}
+
 
   return (
     <div className="complexInfoContainer">
@@ -33,35 +47,35 @@ var sunRise = dateSunRise.getUTCHours()+":"+dateSunRise.getUTCMinutes()
           <IconPropertyValue
             icon={<Water />}
             type="Humedad"
-            value={`${humidity}%`}
+            value={`${humidity} %`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<Visibility />}
             type="Visibilidad"
-            value={`${visibility} miles`}
+            value={`${visibility} km`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<Gauge />}
             type="Presion"
-            value={`${pressure} mb`}
+            value={`${pressure} hpa`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<SunSet />}
             type="Puesta de sol"
-            value={sunSet}
+            value={sunSetTime}
           ></IconPropertyValue>
         </div>
 
         <div className="second4elements">
           <IconPropertyValue
             icon={<Confidence />}
-            type="Exactitud"
-            value={`${probability}%`}
+            type="Nubes"
+            value={`${clouds} %`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<WindSpeed />}
             type="Velocidad del viento"
-            value={`${winSpeed} mph`}
+            value={`${winSpeed} km/h`}
           ></IconPropertyValue>
           <IconPropertyValue
             icon={<WindDirection />}
@@ -71,7 +85,7 @@ var sunRise = dateSunRise.getUTCHours()+":"+dateSunRise.getUTCMinutes()
           <IconPropertyValue
             icon={<SunRise />}
             type="Salida de sol"
-            value={sunRise}
+            value={sunRiseTime}
           ></IconPropertyValue>
         </div>
       </div>

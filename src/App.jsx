@@ -10,24 +10,33 @@ import { CityContextProvider } from "./Context/CityContext";
 var locationToSearch;
 
 function App() {
+
   const [json, setJson] = useState([]);
+  const [forecastDayJson, setForecastDayJson] = useState([]);
+  const API_KEY = "30c3611ec6133e63bf67089bdb89b52b";
 
   useEffect(() => {
-    var simplePath =
-      "https://www.metaweather.com/api/location/search/?query=barcelona";
+    var path = `https://api.openweathermap.org/data/2.5/weather?q=toledo&appid=${API_KEY}&units=metric&lang=es`;
 
-    fetch(simplePath)
+    fetch(path)
       .then((response) => response.json())
       .then((json) => {
-        var woeid = json["0"]["woeid"];
-        var complexPath = `https://www.metaweather.com/api/location/${woeid}/`;
+        setJson(json);
 
-        fetch(complexPath)
+        //obtengo el forecast json a partir del json usando la lon y lat proporcionada
+        var lat = json["coord"]["lat"];
+        var lon = json["coord"]["lon"];
+        var forecastPath = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,current&units=metric&lang=es&appid=${API_KEY}`;
+        
+        fetch(forecastPath)
           .then((response) => response.json())
-          .then((json) => setJson(json))
+          .then((forecastJson) => { 
+            setForecastDayJson(forecastJson["daily"])
+          })
           .catch((error) => {
             <p>{error}</p>;
           });
+
       })
       .catch((error) => {
         <p>{error}</p>;
@@ -54,7 +63,7 @@ function App() {
       <CityContextProvider>
         <SearchBar></SearchBar>
         <DayBasicStatus json={json}></DayBasicStatus>
-        <DaysForecast json={json}></DaysForecast>
+        <DaysForecast forecastDayJson={forecastDayJson} ></DaysForecast>
       </CityContextProvider>
       <Contact></Contact>
       <Footer></Footer>
