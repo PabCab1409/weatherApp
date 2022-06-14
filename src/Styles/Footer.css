@@ -5,3 +5,8 @@
     font-weight: 500;
     padding: 20px;
 }
+
+.developedBy > a, a:link, a:visited, a:active{
+    text-decoration:none;
+    color: white;
+}
